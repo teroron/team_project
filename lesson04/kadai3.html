@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>collaborative_development</title>
+  <link rel="stylesheet" href="kadai3.css">
+  <style>
+    .header {
+      height: 20vh;
+    }
+    .header h1 {
+      text-align: center;
+    }
+    .section {
+      height: 100vh;
+      overflow: hidden;
+    }
+    .section > div {
+      height: 18vh;
+    }
+    .text {
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 50px 100px;
+      background: rgba(100, 500, 0, .5);
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+  <a href="#" class="btn-square-shadow">USER ACCOUNT</a>
+</head>
+<body>
+  <header class="header">
+    <h1>collaborative_development</h1>
+  </header>
+  <section id="section" class="section">
+    <p><img src="p1.png" alt="" class="sa sa--lr" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p2.png" alt="" class="sa sa--rl" data-sa_delay="200" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p3.png" alt="" class="sa sa--up" data-sa_delay="400" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p4.png" alt="" class="sa sa--down" data-sa_delay="600" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p5.png" alt="" class="sa sa--scaleUp" data-sa_delay="600" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p6.png" alt="" class="sa sa--scaleDown" data-sa_delay="400" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p7.png" alt="" class="sa sa--rotateL" data-sa_delay="200" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p8.png" alt="" class="sa sa--rotateR" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p9.png" alt="" class="sa sa--lr" data-sa_delay="800" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p10.png" alt="" class="sa sa--rl" data-sa_delay="1000" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p11.png" alt="" class="sa sa--up" data-sa_delay="1200" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p12.png" alt="" class="sa sa--down" data-sa_delay="1400" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p13.png" alt="" class="sa sa--scaleUp" data-sa_delay="1400" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p14.png" alt="" class="sa sa--scaleDown" data-sa_delay="1200" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p15.png" alt="" class="sa sa--rotateL" data-sa_delay="1000" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+    <p><img src="p16.png" alt="" class="sa sa--rotateR" data-sa_delay="800" data-sa_trigger="#trigger" data-sa_margin="-1"></p>
+  </section>
+  <div id="trigger"></div>
+  <p id="text" class="text">Ready...</p>
+  <script src="kadai3.js"></script>
+  <script>
+    var flag = true;
+    var goFunc = function() {
+      if(document.getElementById('section').getBoundingClientRect().top <= 0) {
+          if(flag) {
+          document.getElementById('text').innerHTML = "[SAVE]\r\n               [DELETE]"
+          flag = false;
+        }
+      }
+    }
+    window.addEventListener('load', goFunc);
+    window.addEventListener('scroll', goFunc);
+  </script>
+</body>
+</html>
